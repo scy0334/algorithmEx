@@ -25,3 +25,16 @@ const lengthRecursion = (arr) => {
     }
     return 1 + lengthRecursion(tail);
 }
+
+const findMaxRecursion = (arr) => {
+    const head = arr[0]
+    const tail = arr.slice(1);
+    if (arr.length === 1) {
+        return arr[0];
+    }
+    if (head > findMaxRecursion(tail)) {
+        return head;
+    } else {
+        return findMaxRecursion(tail);
+    }
+}
